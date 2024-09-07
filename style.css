@@ -28,6 +28,17 @@
   align-items: center;
 }
 
+.heading {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1s ease;
+}
+
+.heading.slide-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .heading h1 {
   font-weight: 600;
 }
@@ -37,6 +48,14 @@
   align-items: center;
   gap: 10px;
   color: #666;
+  opacity: 0;
+  transform: translateX(150%);
+  transition: all 1s ease;
+}
+
+.qs.slide-left {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .qs button {
@@ -56,6 +75,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 1s ease;
+}
+
+.form.slide-up {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .form p {
@@ -200,6 +228,17 @@
   margin-top: 20px;
 }
 
+.footer {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 1s ease;
+}
+
+.footer.slide-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .footer div {
   display: flex;
   align-items: center;
@@ -213,39 +252,9 @@
   display: grid;
 }
 
-.right.expanded {
-  animation: expandContainer 1.2s ease forwards;
-}
-
 .right .img {
   width: 100%;
   border-radius: 30px;
   background-image: url("./img.jpg");
   background-size: cover;
-  animation: expandAndShrink 1.2s ease forwards;
-}
-
-@keyframes expandContainer {
-  0% {
-    height: 100vh; /* Full screen height for the container */
-    width: 100vw; /* Full screen width for the container */
-  }
-  100% {
-    height: 100%; /* Go back to its original height based on the grid */
-    width: 100%; /* Go back to its grid-based width */
-  }
-}
-
-/* Keyframes for expanding the image */
-@keyframes expandAndShrink {
-  0% {
-    height: 100vh; /* Full screen height for the image */
-    width: 100vw; /* Full screen width for the image */
-    border-radius: 0;
-  }
-  100% {
-    width: 100%;
-    border-radius: 30px;
-    background-size: cover;
-  }
 }
