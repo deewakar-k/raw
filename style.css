@@ -13,6 +13,7 @@
   height: 100vh;
   padding: 1.5rem;
   gap: 4rem;
+  overflow: hidden; /* Prevent scrollbars during animation */
 }
 
 .left {
@@ -249,7 +250,17 @@
 }
 
 .right {
+  width: 100%;
   display: grid;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: all 1.5s ease;
+}
+
+.right.slide-right {
+  opacity: 1;
+  width: 100%;
+  transform: translateX(0);
 }
 
 .right .img {
@@ -257,4 +268,5 @@
   border-radius: 30px;
   background-image: url("./img.jpg");
   background-size: cover;
+  background-position: center;
 }
